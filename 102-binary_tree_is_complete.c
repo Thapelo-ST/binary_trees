@@ -17,9 +17,7 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 
 	if (!queue)
 		return (0);
-
 	queue[queue_size++] = (binary_tree_t *)tree;
-
 	while (queue_size > 0)
 	{
 		current = queue[0];
@@ -35,11 +33,9 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 				is_complete = 0;
 				break;
 			}
-
 			queue = realloc(queue, sizeof(binary_tree_t *) * queue_size * 2);
 			if (!queue)
 				return (0);
-
 			queue[queue_size++] = current->left;
 			queue[queue_size++] = current->right;
 		}

@@ -8,6 +8,7 @@
 bst_t *bst_find(bst_t *node)
 {
 	bst_t *current = node->right;
+
 	while (current && current->left)
 		current = current->left;
 	return (current);
@@ -22,6 +23,7 @@ bst_t *bst_find(bst_t *node)
 bst_t *bst_remove(bst_t *root, int value)
 {
 	bst_t *temp, *successor;
+
 	if (!root)
 		return (NULL);
 
